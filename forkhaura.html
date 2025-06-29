@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Surat Manis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/JSAyY7F.jpeg'); /* soft baby blue background */
+      background-repeat: repeat;
+      background-size: cover;
+      font-family: 'Comic Neue', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #6eb1e6;
+      z-index: 2;
+      margin-top: 30px;
+      text-shadow: 1px 1px #ffffff;
+    }
+
+    button {
+      background-color: #a6d5fa;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    button:hover {
+      background-color: #82c4f5;
+    }
+
+    .letter {
+      margin: 30px 20px;
+      padding: 20px;
+      background-color: rgba(204, 238, 255, 0.95); /* soft baby blue box */
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      color: #333;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 2;
+    }
+
+    .letter.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    a {
+      color: #5aaae7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💙 Surat Manis 💙</h1>
+  <button onclick="showLetter()">Klik untuk buka surat</button>
+  <img src="https://i.imgur.com/JdpqhEU.jpeg" alt="Gambar Tambahan" style="max-width: 300px; margin-top: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index:2;">
+
+  <div id="letter" class="letter">
+    <p>Halo Kak Haura! 💙</p>
+    <p>Ini surat aslinya yang dibuat dengan penuh cinta *aseeek, sehat selalu, bisa mengejar impiannya, jadi orang yang bermanfaat, intinya wish you all the best, ya walaupun telat suratnya tapi happy graduate!!!!</p>
+    
+    <p>Makasih banget udah suka bantuin ana ataupun dengerin ana ceritaaaa, biasalah hidup tuh suka ada ada aja, tapi Allah kasih itu semua biar kita bisa kembali kepada-Nya, nanti kita ketemu lagi pas ana udah jadi istri sultan dubai hehe dan kakak udah sukses di bidang pharmacy dan bantu banyak orang AAMIIN, tau gak arti sebenarnya dari Goodbye? is.... God Be with YOU.</p>
+
+    <p>Jangan lupain ana ya ukhty, see you on the top!</p>
+
+    <p>
+      🍀El cielo se nubló en tu mirada,
+cuando la pérdida tocó tu jornada.
+Pero Dios no dejó que cayeras,
+te dio luz en las huellas que dolieran. 🍀
+artinya bisa dicari di google 🙏
+    </p>
+
+    <p>
+      📸 Instagram:
+      <a href="https://www.instagram.com/_andaluzblossom/" target="_blank">
+        @_andaluzblossom
+      </a>
+    </p>
+
+    <p><strong>💖 from La persona más adorable. Andalucía 💖</strong></p>
+
+    <!-- Gambar tambahan di bawah surat -->
+    <img src="https://i.imgur.com/JdpqhEU.jpeg" alt="Hiasan Cantik" style="max-width: 100%; border-radius: 12px; margin-top: 20px;">
+  </div>
+
+  <script>
+    function showLetter() {
+      document.getElementById('letter').classList.add('show');
+    }
+
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.innerText = '💙';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      flower.style.opacity = Math.random();
+      flower.style.fontSize = (Math.random() * 10 + 20) + 'px';
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 7000);
+    }
+
+    setInterval(createFlower, 300);
+  </script>
+
+</body>
+</html>
